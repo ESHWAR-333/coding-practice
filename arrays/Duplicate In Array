@@ -1,0 +1,39 @@
+Duplicate In Array
+
+Problem Statement:
+You are given an array 'ARR' of size 'N' containing each number between 1 and 'N' - 1 at least once. 
+There is a single integer value that is present in the array twice. Your task is to find the duplicate integer value present in the array.
+For example:
+Consider ARR = [1, 2, 3, 4, 4], the duplicate integer value present in the array is 4. Hence, the answer is 4 in this case.
+
+Note:
+
+A duplicate number is always present in the given array.
+
+Constraints:
+1 <= T <= 10
+2 <= N = 105
+1 <= ARR[i] <= N = 1
+Where 'T' denotes the number of test cases, 'N' denotes the number of elements in the array, and 'ARR[i]' denotes the 'i-th' element of the array *ARR'.
+Time limit: 1 sec
+
+
+####
+c++ solution
+
+int findDuplicate(vector<int> &arr) 
+{
+    // Write your code here
+    int n=arr.size();
+    int a1=0,a2=0;
+    for(int i=0;i<n;i++)
+    {
+        a1=a1^arr[i];
+    }
+    for(int i=1;i<n;i++)
+    {
+        a2^=i;
+    }
+    return a1^a2;
+	
+}
